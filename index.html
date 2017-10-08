@@ -212,6 +212,44 @@
 
         </div>
     </div>
+    <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
+        <div class="tools-wrap">
+            <section class="tools-section tools-section-all" q-show="innerArchive">
+                <div class="search-wrap">
+                    <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+                    <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+                    <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+                </div>
+                <div class="widget tagcloud search-tag">
+                    <p class="search-tag-wording">tag:</p>
+                    <label class="search-switch">
+                        <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+                    </label>
+                    <ul class="article-tag-list" q-show="showTags">
+                        <li class="article-tag-list-item">
+                            <a href="javascript:void(0)" class="js-tag color3">前端</a>
+                        </li>
+                        <div class="clearfix"></div>
+                    </ul>
+                </div>
+                <ul class="search-ul">
+                    <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+                    </p>
+                </ul>
+            </section>
+
+            <section class="tools-section tools-section-friends" q-show="friends">
+                <ul class="search-ul">
+                    <li class="search-li">
+                        <a href="http://www.gitnavi.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>程序员工具导航</a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="tools-section tools-section-me" q-show="aboutme">
+            </section>
+        </div>
+    </div>
 </div>
 </body>
 </html>
